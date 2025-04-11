@@ -1,12 +1,16 @@
+import os
 from pyspark.sql import SparkSession
+from dotenv import load_dotenv
+
+load_dotenv()
 
 sfOptions = {
-    "sfUser": "IvanProtsenko",
-    "sfPassword": "157010206387586As",
-    "sfURL": "BMCEWDK-CO98351.snowflakecomputing.com",
+    "sfUser": os.environ.get("SFUSER"),
+    "sfPassword": os.environ.get("SFPASSWORD"),
+    "sfURL": os.environ.get("SFURL"),
+    "sfSchema": os.environ.get("SFSCHEMA"),
+    "sfWarehouse": os.environ.get("SFWAREHOUS"),
     "sfDatabase": "SNOWFLAKE_SAMPLE_DATA",
-    "sfSchema": "TPCH_SF1",
-    "sfWarehouse": "COMPUTE_WH",
     "sfRole": "ACCOUNTADMIN",
 }
 
