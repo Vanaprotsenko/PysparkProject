@@ -12,3 +12,16 @@ class BronzeTable:
     @classmethod
     def get_db_name(cls) -> str:
         return resolve_by_db_name('bronze')
+
+
+class Customer(BronzeTable):
+    __table_name__ = 'customer'
+
+    c_key = 'customer_key'
+    c_name = 'customer_name'
+    c_address = 'customer_address'
+    c_nation_key = 'customer_nation_key'
+    c_phone = 'customer_phone'
+    c_acctbal = 'customer_balance'
+    c_mktsegment = 'customer_segment'
+    c_comment = 'customer_comment'
